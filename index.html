@@ -9,7 +9,6 @@
   <div class="nav__inner">
     <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
       <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
-      <span class="nav__brand-text">Only<em>Strikes</em></span>
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
@@ -144,5 +143,21 @@
   </div>
 </footer>
 
+<script>
+  const nav = document.querySelector('.nav');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      nav.classList.add('nav--hidden');
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>
 </body>
 </html>
