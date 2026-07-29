@@ -92,12 +92,18 @@ img, svg { display: block; max-width: 100%; }
   z-index: 100;
   background: var(--white);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 20px rgba(11, 79, 138, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.nav--hidden {
+  transform: translateY(-100%);
 }
 
 .nav__inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0.9rem 1.5rem;
+  padding: 0.4rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -108,13 +114,18 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   gap: 0.55rem;
   flex-shrink: 0;
+  padding: 0.25rem 0;
 }
 
 .nav__logo-icon {
-  width: 34px;
-  height: 34px;
+  width: 70px;
+  height: auto;
   object-fit: contain;
-  border-radius: 50%;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(11, 79, 138, 0.16));
 }
 
 .nav__brand-text {
