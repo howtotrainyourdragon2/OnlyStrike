@@ -1,1 +1,76 @@
 
+<html>
+<head>
+<title>OnlyStrikes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
+      <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
+      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
+      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
+      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
+      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span>Log in / Sign up</span>
+      </a>
+    </div>
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-content">
+  <p>Replace this content with your page-specific sections.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <a href="#" class="nav__brand nav__brand--footer">
+      <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#12213A"/>
+        <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
+        <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
+        <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
+        <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
+        <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+        <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
+        <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
+      </svg>
+      <span class="nav__brand-text">Only<em>Strikes</em></span>
+    </a>
+    <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.querySelector('.nav');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      nav.classList.add('nav--hidden');
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>
+</body>
+</html>
