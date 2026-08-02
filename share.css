@@ -1,0 +1,413 @@
+/* ==========================================================================
+   OnlyStrikes — Share Your Experience page
+   Page-specific styles, scoped under .share-page
+   (class/id names are namespaced with share- / Share to avoid collisions
+   with cart-page, booking-page, and shop-page stylesheets)
+   ========================================================================== */
+
+.nav__cart {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav__cart svg {
+    width: 22px;
+    height: 22px;
+}
+
+.nav__cart-count {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    border-radius: 999px;
+    background: #4FB6F0;
+    color: #0A1526;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+}
+
+.nav__cart-count[data-cart-count="0"] {
+    display: none;
+}
+
+.share-page {
+    --navy-950: #0A1526;
+    --navy-900: #14213D;
+    --navy-800: #1B2E4D;
+    --navy-700: #26426B;
+    --navy-soft: #3E5A82;
+    --gutter-blue: #1E90C9;
+    --gutter-blue-dim: rgba(30, 144, 201, 0.16);
+    --sky-50: #E9F5FC;
+    --sky-100: #D7EEFA;
+    --sky-200: #BFE0F5;
+    --oak: #C98A4E;
+    --oak-bright: #B9723A;
+    --pin-red: #D6533F;
+    --white: #FFFFFF;
+
+    --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+
+    display: block;
+    background: var(--sky-50);
+    color: var(--navy-900);
+    font-family: var(--font-body);
+    padding: 0 0 6rem;
+}
+
+.share-page * {
+    box-sizing: border-box;
+}
+
+.share-page h1,
+.share-page h2,
+.share-page h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+.share-page a {
+    color: var(--gutter-blue);
+}
+
+.share-page :focus-visible {
+    outline: 2px solid var(--gutter-blue);
+    outline-offset: 3px;
+}
+
+/* -------------------------------------------------------------------- */
+/* Hero                                                                  */
+/* -------------------------------------------------------------------- */
+
+.share-hero {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 3rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.share-hero__pins {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        radial-gradient(var(--navy-700) 2.2px, transparent 2.2px),
+        radial-gradient(var(--navy-700) 2.2px, transparent 2.2px);
+    background-size: 46px 46px;
+    background-position: 0 0, 23px 23px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 10%, transparent 75%);
+    mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 10%, transparent 75%);
+    opacity: 0.8;
+}
+
+.share-hero__eyebrow,
+.share-hero__title,
+.share-hero__subtitle {
+    position: relative;
+    z-index: 1;
+}
+
+.share-hero__eyebrow {
+    font-family: var(--font-mono);
+    color: var(--gutter-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    margin: 0 0 0.9rem;
+}
+
+.share-hero__title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--navy-900);
+}
+
+.share-hero__title em {
+    font-style: normal;
+    color: var(--oak-bright);
+}
+
+.share-hero__subtitle {
+    margin: 1rem auto 0;
+    max-width: 48ch;
+    color: var(--navy-soft);
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+/* -------------------------------------------------------------------- */
+/* Upload dropzone                                                       */
+/* -------------------------------------------------------------------- */
+
+.share-upload {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.share-dropzone {
+    position: relative;
+    border: 2px dashed var(--sky-200);
+    border-radius: 16px;
+    background: var(--white);
+    padding: 2.4rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.share-dropzone--active {
+    border-color: var(--gutter-blue);
+    background: var(--sky-100);
+}
+
+.share-dropzone__icon {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 0.9rem;
+    color: var(--gutter-blue);
+}
+
+.share-dropzone__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--navy-900);
+    margin-bottom: 0.4rem;
+}
+
+.share-dropzone__hint {
+    color: var(--navy-soft);
+    font-size: 0.88rem;
+    margin: 0 0 1.2rem;
+}
+
+.share-dropzone__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--oak);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.3rem;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.share-dropzone__btn:hover {
+    background: var(--oak-bright);
+}
+
+.share-dropzone__btn:active {
+    transform: translateY(1px);
+}
+
+.share-dropzone__input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.share-dropzone__note {
+    margin: 1rem 0 0;
+    font-size: 0.76rem;
+    color: var(--navy-soft);
+}
+
+/* -------------------------------------------------------------------- */
+/* Gallery grid — fixed 5 x 4 layout, 20 slots max                       */
+/* -------------------------------------------------------------------- */
+
+.share-gallery {
+    max-width: 1220px;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.share-gallery__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.share-gallery__title {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gutter-blue);
+}
+
+.share-gallery__count {
+    font-family: var(--font-mono);
+    color: var(--navy-soft);
+    font-size: 0.85rem;
+}
+
+.share-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.9rem;
+}
+
+.share-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--navy-soft);
+    padding: 2.5rem 1rem;
+    border: 1px dashed var(--sky-200);
+    border-radius: 14px;
+}
+
+.share-tile {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--sky-100);
+    border: 1px solid var(--sky-200);
+}
+
+.share-tile__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--sky-50);
+}
+
+.share-tile__badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: rgba(10, 21, 38, 0.75);
+    color: var(--gutter-blue);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+.share-tile__remove {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(10, 21, 38, 0.75);
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.share-tile:hover .share-tile__remove,
+.share-tile__remove:focus-visible {
+    opacity: 1;
+}
+
+.share-tile__remove:hover {
+    background: var(--pin-red);
+}
+
+.share-tile__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.4rem 0.55rem;
+    background: linear-gradient(0deg, rgba(10, 21, 38, 0.85), transparent);
+    color: var(--white);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* -------------------------------------------------------------------- */
+/* Toast confirmation                                                    */
+/* -------------------------------------------------------------------- */
+
+.share-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.6rem;
+    transform: translate(-50%, 12px);
+    background: var(--navy-900);
+    border: 1px solid var(--gutter-blue);
+    color: var(--white);
+    font-size: 0.9rem;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 50;
+    max-width: 90vw;
+    text-align: center;
+}
+
+.share-toast--visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* -------------------------------------------------------------------- */
+/* Responsive                                                            */
+/* -------------------------------------------------------------------- */
+
+@media (max-width: 980px) {
+    .share-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .share-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .share-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .share-page * {
+        transition: none !important;
+    }
+}
