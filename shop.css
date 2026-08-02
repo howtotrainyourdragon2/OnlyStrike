@@ -106,16 +106,14 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: repeating-linear-gradient(
-        90deg,
-        var(--sky-200) 0,
-        var(--sky-200) 2px,
-        transparent 2px,
-        transparent 64px
-    );
+    background-image:
+        radial-gradient(var(--navy-700) 2.2px, transparent 2.2px),
+        radial-gradient(var(--navy-700) 2.2px, transparent 2.2px);
+    background-size: 46px 46px;
+    background-position: 0 0, 23px 23px;
     -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 10%, transparent 75%);
     mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 10%, transparent 75%);
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .shop-hero__eyebrow,
