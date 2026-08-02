@@ -1,76 +1,278 @@
-
 <html>
-<head>
-<title>OnlyStrikes</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <head>
+        <title>OnlyStrikes — Share Your Experience</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="share.css">
+    </head>
+    <body>
 
-<header class="nav">
-  <div class="nav__inner">
-    <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
-      <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
-    </nav>
-    <div class="nav__actions">
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <span>Log in / Sign up</span>
-      </a>
-    </div>
-    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+    <header class="nav">
+        <div class="nav__inner">
+            <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
+                <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
+            </nav>
+            <div class="nav__actions">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Cart" class="nav__cart" aria-label="View cart">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L20.5 8H6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+                        <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
+                    </svg>
+                    <span class="nav__cart-count" data-cart-count="0">0</span>
+                </a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span>Log in / Sign up</span>
+                </a>
+            </div>
+            <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
 
-<main class="page-content">
-  <p>Replace this content with your page-specific sections.</p>
-</main>
+    <main class="page-content share-page">
 
-<footer class="footer">
-  <div class="footer__inner">
-    <a href="#" class="nav__brand nav__brand--footer">
-      <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="#12213A"/>
-        <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
-        <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
-        <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
-        <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
-        <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-        <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
-        <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
-      </svg>
-      <span class="nav__brand-text">Only<em>Strikes</em></span>
-    </a>
-    <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
-  </div>
-</footer>
+        <section class="share-hero">
+            <div class="share-hero__pins" aria-hidden="true"></div>
+            <p class="share-hero__eyebrow">Community Lane</p>
+            <h1 class="share-hero__title">Share your <em>strike</em> moment</h1>
+            <p class="share-hero__subtitle">Post photos and clips from your session — turkeys, splits, gutter balls and all. The wall shows the most recent 20.</p>
+        </section>
 
-<script>
-  const nav = document.querySelector('.nav');
-  let lastScrollY = window.scrollY;
+        <div class="share-upload">
+            <div class="share-dropzone" id="shareDropzone">
+                <svg class="share-dropzone__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="share-dropzone__title">Drag photos or videos here</p>
+                <p class="share-dropzone__hint">or</p>
+                <button class="share-dropzone__btn" type="button">Choose files</button>
+                <input class="share-dropzone__input" id="shareFileInput" type="file" accept="image/*,video/*" multiple aria-label="Upload photos or videos">
+                <p class="share-dropzone__note">Stored right in your browser. The wall keeps the 20 most recent — older posts drop off automatically.</p>
+            </div>
+        </div>
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+        <section class="share-gallery">
+            <div class="share-gallery__header">
+                <h2 class="share-gallery__title">The wall</h2>
+                <span class="share-gallery__count" id="shareCount">0 / 20</span>
+            </div>
+            <ul class="share-grid" id="shareGrid" aria-label="Shared photos and videos"></ul>
+        </section>
 
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      nav.classList.add('nav--hidden');
-    } else {
-      nav.classList.remove('nav--hidden');
-    }
+    </main>
 
-    lastScrollY = currentScrollY;
-  });
-</script>
-</body>
+    <div class="share-toast" id="shareToast" role="status" aria-live="polite"></div>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <a href="#" class="nav__brand nav__brand--footer">
+                <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" fill="#12213A"/>
+                    <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
+                    <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
+                    <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
+                    <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
+                    <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+                    <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
+                    <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
+                </svg>
+                <span class="nav__brand-text">Only<em>Strikes</em></span>
+            </a>
+            <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                nav.classList.add('nav--hidden');
+            } else {
+                nav.classList.remove('nav--hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // --- Cart badge (reads the same cart other pages write to) ---
+        function updateCartBadge() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('onlystrikes_cart')) || [];
+                const badge = document.querySelector('[data-cart-count]');
+                if (badge) {
+                    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+                    badge.textContent = count;
+                    badge.setAttribute('data-cart-count', count);
+                }
+            } catch {}
+        }
+        updateCartBadge();
+
+        // --- Shared media wall ---
+        const MEDIA_KEY = 'onlystrikes_shared_media';
+        const MAX_ITEMS = 20;
+
+        function getMedia() {
+            try {
+                return JSON.parse(localStorage.getItem(MEDIA_KEY)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveMedia(media) {
+            try {
+                localStorage.setItem(MEDIA_KEY, JSON.stringify(media));
+                return true;
+            } catch {
+                return false;
+            }
+        }
+
+        const shareGrid = document.getElementById('shareGrid');
+        const shareCount = document.getElementById('shareCount');
+        const shareToast = document.getElementById('shareToast');
+        const shareDropzone = document.getElementById('shareDropzone');
+        const shareFileInput = document.getElementById('shareFileInput');
+
+        let toastTimer = null;
+        function showToast(message) {
+            shareToast.textContent = message;
+            shareToast.classList.add('share-toast--visible');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => shareToast.classList.remove('share-toast--visible'), 1600);
+        }
+
+        function renderGallery() {
+            const media = getMedia();
+            shareCount.textContent = `${media.length} / ${MAX_ITEMS}`;
+
+            if (media.length === 0) {
+                shareGrid.innerHTML = `<li class="share-empty">No posts yet — be the first to add a photo or clip from your session.</li>`;
+                return;
+            }
+
+            // Most recent first
+            shareGrid.innerHTML = [...media].reverse().map(item => `
+                <li class="share-tile" data-id="${item.id}">
+                    ${item.type === 'video'
+                        ? `<video class="share-tile__media" src="${item.dataUrl}" muted playsinline controls></video>`
+                        : `<img class="share-tile__media" src="${item.dataUrl}" alt="${item.name}">`}
+                    <span class="share-tile__badge">${item.type === 'video' ? 'Video' : 'Photo'}</span>
+                    <button class="share-tile__remove" type="button" data-action="remove" aria-label="Remove post">&times;</button>
+                    <span class="share-tile__caption">${item.name}</span>
+                </li>
+            `).join('');
+        }
+
+        function addFiles(fileList) {
+            const files = Array.from(fileList).filter(f => f.type.startsWith('image/') || f.type.startsWith('video/'));
+            if (files.length === 0) return;
+
+            let remaining = files.length;
+            let addedCount = 0;
+            let failedCount = 0;
+
+            files.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    let media = getMedia();
+                    media.push({
+                        id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+                        type: file.type.startsWith('video/') ? 'video' : 'image',
+                        name: file.name,
+                        dataUrl: reader.result,
+                        addedAt: Date.now()
+                    });
+
+                    // Keep only the most recent MAX_ITEMS — drop oldest once we go past it
+                    if (media.length > MAX_ITEMS) {
+                        media = media.slice(media.length - MAX_ITEMS);
+                    }
+
+                    const saved = saveMedia(media);
+                    if (saved) {
+                        addedCount++;
+                    } else {
+                        failedCount++;
+                    }
+
+                    remaining--;
+                    if (remaining === 0) {
+                        renderGallery();
+                        if (failedCount > 0) {
+                            showToast(`Added ${addedCount}, but ${failedCount} didn't fit in local storage`);
+                        } else {
+                            showToast(addedCount === 1 ? 'Post added to the wall' : `${addedCount} posts added to the wall`);
+                        }
+                    }
+                };
+                reader.onerror = () => {
+                    failedCount++;
+                    remaining--;
+                    if (remaining === 0) {
+                        renderGallery();
+                        showToast('Something went wrong reading one or more files');
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        shareFileInput.addEventListener('change', (e) => {
+            addFiles(e.target.files);
+            e.target.value = '';
+        });
+
+        ['dragenter', 'dragover'].forEach(evt => {
+            shareDropzone.addEventListener(evt, (e) => {
+                e.preventDefault();
+                shareDropzone.classList.add('share-dropzone--active');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(evt => {
+            shareDropzone.addEventListener(evt, (e) => {
+                e.preventDefault();
+                shareDropzone.classList.remove('share-dropzone--active');
+            });
+        });
+
+        shareDropzone.addEventListener('drop', (e) => {
+            if (e.dataTransfer?.files?.length) {
+                addFiles(e.dataTransfer.files);
+            }
+        });
+
+        shareGrid.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-action="remove"]');
+            if (!btn) return;
+            const tile = e.target.closest('.share-tile');
+            const id = tile.dataset.id;
+            const media = getMedia().filter(item => item.id !== id);
+            saveMedia(media);
+            renderGallery();
+            showToast('Post removed');
+        });
+
+        renderGallery();
+    </script>
+    </body>
 </html>
