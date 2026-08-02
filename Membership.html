@@ -1,76 +1,310 @@
-
 <html>
-<head>
-<title>OnlyStrikes</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <head>
+        <title>OnlyStrikes — Membership</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="membership.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    </head>
+    <body>
 
-<header class="nav">
-  <div class="nav__inner">
-    <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
-      <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
-    </nav>
-    <div class="nav__actions">
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <span>Log in / Sign up</span>
-      </a>
+    <header class="nav">
+        <div class="nav__inner">
+            <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
+                <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
+            </nav>
+            <div class="nav__actions">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span>Log in / Sign up</span>
+                </a>
+                <a href="Cart.html" class="nav__cart nav__cart--active" aria-label="View cart">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="9" cy="20" r="1.6" fill="currentColor"/>
+                        <circle cx="18" cy="20" r="1.6" fill="currentColor"/>
+                        <path d="M3 4h2l1.6 10.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L20.5 8H6.2"
+                              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="nav__cart-count" data-cart-count>0</span>
+                </a>
+            </div>
+            <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="membership-page">
+
+        <section class="membership-hero">
+            <div class="membership-hero__pins" aria-hidden="true"></div>
+            <p class="membership-hero__eyebrow">Membership</p>
+            <h1 class="membership-hero__title">Bowl more. <span>Pay less.</span></h1>
+            <p class="membership-hero__subtitle">Unlock discounted lanes, free games, and priority booking every single visit.</p>
+
+            <div class="billing-toggle" role="group" aria-label="Billing cycle">
+                <span class="billing-toggle__label billing-toggle__label--active" data-label="monthly">Monthly</span>
+                <button type="button" class="billing-toggle__switch" id="billingSwitch" role="switch" aria-checked="false" aria-label="Toggle annual billing">
+                    <span class="billing-toggle__knob"></span>
+                </button>
+                <span class="billing-toggle__label" data-label="annual">Annual <em>save ~20%</em></span>
+            </div>
+        </section>
+
+        <section class="plans" aria-label="Membership plans">
+            <div class="plan-grid">
+
+                <article class="plan-card" data-plan="Pin Starter">
+                    <div class="plan-card__head">
+                        <h2 class="plan-card__name">Pin Starter</h2>
+                        <p class="plan-card__tagline">For casual weekend bowlers</p>
+                    </div>
+                    <div class="plan-card__price">
+                        <span class="plan-card__amount" data-monthly="9" data-annual="86">$9</span>
+                        <span class="plan-card__cycle" data-cycle-monthly="/mo" data-cycle-annual="/yr">/mo</span>
+                    </div>
+                    <ul class="plan-card__perks">
+                        <li>10% off lane bookings</li>
+                        <li>1 free shoe rental / month</li>
+                        <li>Member-only newsletter &amp; offers</li>
+                    </ul>
+                    <button type="button" class="plan-card__cta" data-perks="10% off lanes, 1 free shoe rental/mo">
+                        <span>Join Pin Starter</span>
+                    </button>
+                </article>
+
+                <article class="plan-card plan-card--featured" data-plan="Strike Club">
+                    <p class="plan-card__badge">Most popular</p>
+                    <div class="plan-card__head">
+                        <h2 class="plan-card__name">Strike Club</h2>
+                        <p class="plan-card__tagline">For regulars who want more frames</p>
+                    </div>
+                    <div class="plan-card__price">
+                        <span class="plan-card__amount" data-monthly="19" data-annual="182">$19</span>
+                        <span class="plan-card__cycle" data-cycle-monthly="/mo" data-cycle-annual="/yr">/mo</span>
+                    </div>
+                    <ul class="plan-card__perks">
+                        <li>20% off lane bookings</li>
+                        <li>2 free games every month</li>
+                        <li>Free shoe rental, every visit</li>
+                        <li>Priority lane booking</li>
+                    </ul>
+                    <button type="button" class="plan-card__cta" data-perks="20% off lanes, 2 free games/mo, priority booking">
+                        <span>Join Strike Club</span>
+                    </button>
+                </article>
+
+                <article class="plan-card" data-plan="All-Star">
+                    <div class="plan-card__head">
+                        <h2 class="plan-card__name">All-Star</h2>
+                        <p class="plan-card__tagline">For the die-hard league players</p>
+                    </div>
+                    <div class="plan-card__price">
+                        <span class="plan-card__amount" data-monthly="35" data-annual="336">$35</span>
+                        <span class="plan-card__cycle" data-cycle-monthly="/mo" data-cycle-annual="/yr">/mo</span>
+                    </div>
+                    <ul class="plan-card__perks">
+                        <li>30% off lane bookings</li>
+                        <li>4 free games every month</li>
+                        <li>Unlimited free shoe rental</li>
+                        <li>Priority booking + 1 guest pass / month</li>
+                        <li>15% off shop merchandise</li>
+                    </ul>
+                    <button type="button" class="plan-card__cta" data-perks="30% off lanes, 4 free games/mo, unlimited shoes, 15% off shop">
+                        <span>Join All-Star</span>
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="membership-faq" aria-label="Frequently asked questions">
+            <h2 class="membership-faq__title">Good to know</h2>
+            <details class="faq-item">
+                <summary>Can I cancel anytime?</summary>
+                <p>Yes. Memberships renew automatically but can be cancelled from your account before the next billing date — no lock-in contracts.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Do perks stack with promotions?</summary>
+                <p>Member discounts apply on top of standard rates, but can't be combined with other percentage-off promotions on the same booking.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can I switch plans later?</summary>
+                <p>Absolutely — upgrade or downgrade whenever you like. Changes take effect on your next billing cycle.</p>
+            </details>
+        </section>
+
+    </main>
+
+    <div class="cart-toast" id="cartToast" role="status" aria-live="polite" hidden>
+        <span id="cartToastText">Added to cart</span>
     </div>
-    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
 
-<main class="page-content">
-  <p>Replace this content with your page-specific sections.</p>
-</main>
+    <footer class="footer">
+        <div class="footer__inner">
+            <a href="#" class="nav__brand nav__brand--footer">
+                <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" fill="#12213A"/>
+                    <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
+                    <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
+                    <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
+                    <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
+                    <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+                    <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
+                    <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
+                </svg>
+                <span class="nav__brand-text">Only<em>Strikes</em></span>
+            </a>
+            <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
+        </div>
+    </footer>
 
-<footer class="footer">
-  <div class="footer__inner">
-    <a href="#" class="nav__brand nav__brand--footer">
-      <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="#12213A"/>
-        <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
-        <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
-        <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
-        <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
-        <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-        <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
-        <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
-      </svg>
-      <span class="nav__brand-text">Only<em>Strikes</em></span>
-    </a>
-    <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
-  </div>
-</footer>
+    <script>
+        const nav = document.querySelector('.nav');
+        let lastScrollY = window.scrollY;
 
-<script>
-  const nav = document.querySelector('.nav');
-  let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            nav.classList.add('nav--hidden');
+            } else {
+            nav.classList.remove('nav--hidden');
+            }
 
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      nav.classList.add('nav--hidden');
-    } else {
-      nav.classList.remove('nav--hidden');
-    }
+            lastScrollY = currentScrollY;
+        });
+    </script>
 
-    lastScrollY = currentScrollY;
-  });
-</script>
-</body>
+    <script>
+        // --- Shared cart helpers (same storage key / shape used across the site) ---
+        const CART_KEY = 'onlystrikes_cart';
+
+        function getCart() {
+            try {
+                return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        }
+
+        function updateCartBadge() {
+            const cart = getCart();
+            const badge = document.querySelector('[data-cart-count]');
+            if (badge) {
+                const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+                badge.textContent = count;
+                badge.setAttribute('data-cart-count', count);
+            }
+        }
+
+        updateCartBadge();
+    </script>
+
+    <script>
+        (function () {
+            const billingSwitch = document.getElementById('billingSwitch');
+            const labels = document.querySelectorAll('.billing-toggle__label');
+            const amounts = document.querySelectorAll('.plan-card__amount');
+            const cycles = document.querySelectorAll('.plan-card__cycle');
+            const ctaButtons = document.querySelectorAll('.plan-card__cta');
+            const toast = document.getElementById('cartToast');
+            const toastText = document.getElementById('cartToastText');
+
+            let billing = 'monthly'; // 'monthly' | 'annual'
+            let toastTimer = null;
+
+            function money(n) {
+                return '$' + Number(n).toFixed(2).replace(/\.00$/, '');
+            }
+
+            function refreshPrices() {
+                amounts.forEach((el) => {
+                    const value = billing === 'annual' ? el.dataset.annual : el.dataset.monthly;
+                    el.textContent = money(value);
+                });
+                cycles.forEach((el) => {
+                    el.textContent = billing === 'annual' ? el.dataset.cycleAnnual : el.dataset.cycleMonthly;
+                });
+                labels.forEach((el) => {
+                    el.classList.toggle('billing-toggle__label--active', el.dataset.label === billing);
+                });
+                billingSwitch.classList.toggle('billing-toggle__switch--on', billing === 'annual');
+                billingSwitch.setAttribute('aria-checked', billing === 'annual');
+            }
+
+            billingSwitch.addEventListener('click', () => {
+                billing = billing === 'monthly' ? 'annual' : 'monthly';
+                refreshPrices();
+            });
+
+            function showToast(text) {
+                toastText.textContent = text;
+                toast.hidden = false;
+                requestAnimationFrame(() => toast.classList.add('cart-toast--visible'));
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toast.classList.remove('cart-toast--visible');
+                    setTimeout(() => { toast.hidden = true; }, 250);
+                }, 2600);
+            }
+
+            ctaButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const card = button.closest('.plan-card');
+                    const planName = card.dataset.plan;
+                    const amountEl = card.querySelector('.plan-card__amount');
+                    const price = Number(billing === 'annual' ? amountEl.dataset.annual : amountEl.dataset.monthly);
+                    const billingLabel = billing === 'annual' ? 'Annual' : 'Monthly';
+                    const perks = button.dataset.perks;
+
+                    const cart = getCart();
+                    const item = {
+                        id: 'OS-MEM-' + Math.random().toString(36).slice(2, 8).toUpperCase(),
+                        type: 'membership',
+                        name: planName + ' Membership (' + billingLabel + ')',
+                        price: price,
+                        qty: 1,
+                        image: 'BrandLogo.png',
+                        details: {
+                            plan: planName,
+                            billing: billingLabel,
+                            perks: perks
+                        }
+                    };
+                    cart.push(item);
+                    saveCart(cart);
+                    updateCartBadge();
+
+                    const originalText = button.querySelector('span').textContent;
+                    button.querySelector('span').textContent = 'Added ✓';
+                    button.classList.add('plan-card__cta--added');
+                    setTimeout(() => {
+                        button.querySelector('span').textContent = originalText;
+                        button.classList.remove('plan-card__cta--added');
+                    }, 1600);
+
+                    showToast(planName + ' added to cart');
+                });
+            });
+
+            refreshPrices();
+        })();
+    </script>
+    </body>
 </html>
