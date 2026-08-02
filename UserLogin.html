@@ -1,1 +1,390 @@
 
+<html>
+    <head>
+        <title>OnlyStrikes — Log In / Sign Up</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="login.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+    <header class="nav">
+        <div class="nav__inner">
+            <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
+                <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
+            </nav>
+            <div class="nav__actions">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span>Log in / Sign up</span>
+                </a>
+                <a href="Cart.html" class="nav__cart nav__cart--active" aria-label="View cart">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="9" cy="20" r="1.6" fill="currentColor"/>
+                        <circle cx="18" cy="20" r="1.6" fill="currentColor"/>
+                        <path d="M3 4h2l1.6 10.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L20.5 8H6.2"
+                              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="nav__cart-count" data-cart-count>0</span>
+                </a>
+            </div>
+            <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="auth-page">
+
+        <div class="auth-backdrop" aria-hidden="true">
+            <div class="lane-arrows"></div>
+            <div class="lane-glow"></div>
+            <span class="floating-pin floating-pin--1"></span>
+            <span class="floating-pin floating-pin--2"></span>
+            <span class="floating-pin floating-pin--3"></span>
+            <span class="floating-pin floating-pin--4"></span>
+            <span class="floating-pin floating-pin--5"></span>
+            <span class="spark spark--1"></span>
+            <span class="spark spark--2"></span>
+            <span class="spark spark--3"></span>
+            <span class="spark spark--4"></span>
+        </div>
+
+        <section class="auth-shell">
+
+            <div class="auth-visual">
+                <p class="auth-visual__eyebrow">Member Lounge</p>
+                <h1 class="auth-visual__title">Every frame<br>starts <span>here.</span></h1>
+                <p class="auth-visual__subtitle">Sign in to track your high score, manage bookings, and redeem member perks — or join the league in seconds.</p>
+
+                <div class="strike-meter">
+                    <div class="strike-meter__pins" id="strikePins">
+                        <span class="mini-pin" data-row="4"></span>
+                        <span class="mini-pin" data-row="3"></span>
+                        <span class="mini-pin" data-row="3"></span>
+                        <span class="mini-pin" data-row="2"></span>
+                        <span class="mini-pin" data-row="2"></span>
+                        <span class="mini-pin" data-row="2"></span>
+                        <span class="mini-pin" data-row="1"></span>
+                        <span class="mini-pin" data-row="1"></span>
+                        <span class="mini-pin" data-row="1"></span>
+                        <span class="mini-pin" data-row="1"></span>
+                    </div>
+                    <p class="strike-meter__caption" id="strikeCaption">Your next visit could be a strike.</p>
+                </div>
+
+                <div class="scoreboard-strip" aria-hidden="true">
+                    <span class="scoreboard-strip__digit">2</span>
+                    <span class="scoreboard-strip__digit">4</span>
+                    <span class="scoreboard-strip__digit">7</span>
+                    <span class="scoreboard-strip__slash">/</span>
+                    <span class="scoreboard-strip__digit">X</span>
+                </div>
+            </div>
+
+            <div class="auth-card" id="authCard">
+                <div class="auth-tabs" role="tablist">
+                    <button type="button" class="auth-tabs__btn auth-tabs__btn--active" data-tab="login" role="tab" aria-selected="true" id="tabLogin">Log In</button>
+                    <button type="button" class="auth-tabs__btn" data-tab="signup" role="tab" aria-selected="false" id="tabSignup">Sign Up</button>
+                    <span class="auth-tabs__indicator" id="tabIndicator"></span>
+                </div>
+
+                <form class="auth-form" id="loginForm" data-panel="login" novalidate>
+                    <div class="field-float">
+                        <input type="email" id="loginEmail" placeholder=" " required>
+                        <label for="loginEmail">Email address</label>
+                    </div>
+                    <div class="field-float field-float--password">
+                        <input type="password" id="loginPassword" placeholder=" " required>
+                        <label for="loginPassword">Password</label>
+                        <button type="button" class="password-toggle" data-target="loginPassword" aria-label="Show password">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="auth-form__row">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__box"></span>
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="auth-form__link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-submit">
+                        <span>Enter the Lounge</span>
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+
+                    <p class="auth-divider"><span>or continue with</span></p>
+
+                    <div class="social-row">
+                        <button type="button" class="social-btn" aria-label="Continue with Google">G</button>
+                        <button type="button" class="social-btn" aria-label="Continue with Apple">🍏</button>
+                        <button type="button" class="social-btn" aria-label="Continue with Facebook">f</button>
+                    </div>
+                </form>
+
+                <form class="auth-form" id="signupForm" data-panel="signup" novalidate hidden>
+                    <div class="field-float">
+                        <input type="text" id="signupName" placeholder=" " required>
+                        <label for="signupName">Full name</label>
+                    </div>
+                    <div class="field-float">
+                        <input type="email" id="signupEmail" placeholder=" " required>
+                        <label for="signupEmail">Email address</label>
+                    </div>
+                    <div class="field-float field-float--password">
+                        <input type="password" id="signupPassword" placeholder=" " required>
+                        <label for="signupPassword">Create password</label>
+                        <button type="button" class="password-toggle" data-target="signupPassword" aria-label="Show password">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="password-strength__bar"><span id="strengthFill"></span></div>
+                        <p class="password-strength__label" id="strengthLabel">Gutter ball — add more characters</p>
+                    </div>
+
+                    <label class="checkbox checkbox--terms">
+                        <input type="checkbox" required>
+                        <span class="checkbox__box"></span>
+                        <span>I agree to the House Rules &amp; Privacy Policy</span>
+                    </label>
+
+                    <button type="submit" class="auth-submit auth-submit--gold">
+                        <span>Join the League</span>
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </form>
+
+                <p class="auth-swap">
+                    <span id="swapLoginText">New here? <button type="button" class="auth-swap__btn" data-swap-to="signup">Create an account</button></span>
+                    <span id="swapSignupText" hidden>Already a member? <button type="button" class="auth-swap__btn" data-swap-to="login">Log in</button></span>
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <div class="strike-overlay" id="strikeOverlay" aria-hidden="true">
+        <div class="strike-overlay__burst" id="strikeBurst"></div>
+        <p class="strike-overlay__text">STRIKE!</p>
+        <p class="strike-overlay__sub" id="strikeSub">Welcome back — lane's warming up.</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <a href="#" class="nav__brand nav__brand--footer">
+                <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" fill="#12213A"/>
+                    <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
+                    <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
+                    <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
+                    <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
+                    <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+                    <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
+                    <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
+                </svg>
+                <span class="nav__brand-text">Only<em>Strikes</em></span>
+            </a>
+            <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            nav.classList.add('nav--hidden');
+            } else {
+            nav.classList.remove('nav--hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+
+    <script>
+        // --- Shared cart badge (kept in sync even though this page doesn't add items) ---
+        const CART_KEY = 'onlystrikes_cart';
+        function getCart() {
+            try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { return []; }
+        }
+        (function updateCartBadge() {
+            const cart = getCart();
+            const badge = document.querySelector('[data-cart-count]');
+            if (badge) {
+                const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+                badge.textContent = count;
+                badge.setAttribute('data-cart-count', count);
+            }
+        })();
+    </script>
+
+    <script>
+        (function () {
+            /* ---------------------------------------------------------------- */
+            /* Tab switching (Log In <-> Sign Up)                                */
+            /* ---------------------------------------------------------------- */
+            const tabLogin = document.getElementById('tabLogin');
+            const tabSignup = document.getElementById('tabSignup');
+            const tabIndicator = document.getElementById('tabIndicator');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const swapLoginText = document.getElementById('swapLoginText');
+            const swapSignupText = document.getElementById('swapSignupText');
+
+            function setTab(target) {
+                const isLogin = target === 'login';
+                tabLogin.classList.toggle('auth-tabs__btn--active', isLogin);
+                tabSignup.classList.toggle('auth-tabs__btn--active', !isLogin);
+                tabLogin.setAttribute('aria-selected', isLogin);
+                tabSignup.setAttribute('aria-selected', !isLogin);
+                tabIndicator.classList.toggle('auth-tabs__indicator--right', !isLogin);
+
+                loginForm.hidden = !isLogin;
+                signupForm.hidden = isLogin;
+                swapLoginText.hidden = !isLogin;
+                swapSignupText.hidden = isLogin;
+            }
+
+            tabLogin.addEventListener('click', () => setTab('login'));
+            tabSignup.addEventListener('click', () => setTab('signup'));
+            document.querySelectorAll('[data-swap-to]').forEach((btn) => {
+                btn.addEventListener('click', () => setTab(btn.dataset.swapTo));
+            });
+
+            /* ---------------------------------------------------------------- */
+            /* Password visibility toggles                                       */
+            /* ---------------------------------------------------------------- */
+            document.querySelectorAll('.password-toggle').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const input = document.getElementById(btn.dataset.target);
+                    const showing = input.type === 'text';
+                    input.type = showing ? 'password' : 'text';
+                    btn.classList.toggle('password-toggle--active', !showing);
+                });
+            });
+
+            /* ---------------------------------------------------------------- */
+            /* Password strength meter (signup only) — bowling-themed labels    */
+            /* ---------------------------------------------------------------- */
+            const signupPassword = document.getElementById('signupPassword');
+            const strengthFill = document.getElementById('strengthFill');
+            const strengthLabel = document.getElementById('strengthLabel');
+
+            const STRENGTH_STEPS = [
+                { min: 0, label: 'Gutter ball — add more characters', color: '#D64545', width: '10%' },
+                { min: 1, label: 'Split — mix in a number or symbol', color: '#E0A868', width: '40%' },
+                { min: 3, label: 'Spare — nice, almost there', color: '#4FB6F0', width: '70%' },
+                { min: 4, label: 'STRIKE! Strong password', color: '#2E9E5B', width: '100%' }
+            ];
+
+            function scorePassword(value) {
+                let score = 0;
+                if (value.length >= 8) score++;
+                if (/[A-Z]/.test(value)) score++;
+                if (/[0-9]/.test(value)) score++;
+                if (/[^A-Za-z0-9]/.test(value)) score++;
+                if (value.length < 4) score = 0;
+                return score;
+            }
+
+            signupPassword.addEventListener('input', () => {
+                const score = scorePassword(signupPassword.value);
+                const step = [...STRENGTH_STEPS].reverse().find((s) => score >= s.min) || STRENGTH_STEPS[0];
+                strengthFill.style.width = step.width;
+                strengthFill.style.background = step.color;
+                strengthLabel.textContent = step.label;
+                strengthLabel.style.color = step.color;
+            });
+
+            /* ---------------------------------------------------------------- */
+            /* Parallax floating pins (mouse-driven, gently)                     */
+            /* ---------------------------------------------------------------- */
+            const backdrop = document.querySelector('.auth-backdrop');
+            const pins = document.querySelectorAll('.floating-pin');
+
+            window.addEventListener('mousemove', (e) => {
+                const xRatio = (e.clientX / window.innerWidth) - 0.5;
+                const yRatio = (e.clientY / window.innerHeight) - 0.5;
+                pins.forEach((pin, i) => {
+                    const depth = (i + 1) * 6;
+                    pin.style.transform = `translate(${xRatio * depth}px, ${yRatio * depth}px)`;
+                });
+            });
+
+            /* ---------------------------------------------------------------- */
+            /* Strike celebration on submit (mocked — no backend)                */
+            /* ---------------------------------------------------------------- */
+            const strikeOverlay = document.getElementById('strikeOverlay');
+            const strikeBurst = document.getElementById('strikeBurst');
+            const strikeSub = document.getElementById('strikeSub');
+            const miniPins = document.querySelectorAll('#strikePins .mini-pin');
+
+            function knockDownPins() {
+                miniPins.forEach((pin, i) => {
+                    setTimeout(() => pin.classList.add('mini-pin--down'), i * 60);
+                });
+                setTimeout(() => {
+                    miniPins.forEach((pin) => pin.classList.remove('mini-pin--down'));
+                }, 2600);
+            }
+
+            function spawnConfetti() {
+                strikeBurst.innerHTML = '';
+                const colors = ['#4FB6F0', '#E0A868', '#FFFFFF', '#1F8FDB'];
+                for (let i = 0; i < 26; i++) {
+                    const piece = document.createElement('span');
+                    const angle = Math.random() * 360;
+                    const distance = 60 + Math.random() * 140;
+                    piece.style.setProperty('--angle', angle + 'deg');
+                    piece.style.setProperty('--distance', distance + 'px');
+                    piece.style.setProperty('--delay', (Math.random() * 0.15) + 's');
+                    piece.style.background = colors[i % colors.length];
+                    piece.className = 'confetti-piece';
+                    strikeBurst.appendChild(piece);
+                }
+            }
+
+            function celebrate(message) {
+                strikeSub.textContent = message;
+                spawnConfetti();
+                knockDownPins();
+                strikeOverlay.classList.add('strike-overlay--visible');
+                setTimeout(() => {
+                    strikeOverlay.classList.remove('strike-overlay--visible');
+                }, 2200);
+            }
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                celebrate('Welcome back — lane\'s warming up.');
+            });
+
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                celebrate('You\'re in the league now!');
+            });
+        })();
+    </script>
+    </body>
+</html>
