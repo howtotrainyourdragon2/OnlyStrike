@@ -1,76 +1,481 @@
-
 <html>
-<head>
-<title>OnlyStrikes</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <head>
+        <title>OnlyStrikes — Lane Booking</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="booking.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    </head>
+    <body>
 
-<header class="nav">
-  <div class="nav__inner">
-    <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
-      <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
-    </nav>
-    <div class="nav__actions">
-      <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <span>Log in / Sign up</span>
-      </a>
-    </div>
-    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+    <header class="nav">
+        <div class="nav__inner">
+            <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/" class="nav__brand" aria-label="OnlyStrikes home">
+                <img class="nav__logo-icon" src="BrandLogo.png" alt="OnlyStrikes logo">
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/">Home</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Shop">Shop</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/ShareYourExp">Share</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Booking">Bookings</a>
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
+            </nav>
+            <div class="nav__actions">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span>Log in / Sign up</span>
+                </a>
+                <a href="Cart.html" class="nav__cart nav__cart--active" aria-label="View cart">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="9" cy="20" r="1.6" fill="currentColor"/>
+                        <circle cx="18" cy="20" r="1.6" fill="currentColor"/>
+                        <path d="M3 4h2l1.6 10.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L20.5 8H6.2"
+                              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="nav__cart-count" data-cart-count>0</span>
+                </a>
+            </div>
+            <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
 
-<main class="page-content">
-  <p>Replace this content with your page-specific sections.</p>
-</main>
+    <main class="booking-page">
 
-<footer class="footer">
-  <div class="footer__inner">
-    <a href="#" class="nav__brand nav__brand--footer">
-      <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="#12213A"/>
-        <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
-        <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
-        <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
-        <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
-        <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-        <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
-        <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
-      </svg>
-      <span class="nav__brand-text">Only<em>Strikes</em></span>
-    </a>
-    <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
-  </div>
-</footer>
+        <section class="booking-hero">
+            <div class="booking-hero__pins" aria-hidden="true"></div>
+            <p class="booking-hero__eyebrow">Lane booking</p>
+            <h1 class="booking-hero__title">Reserve your frames.</h1>
+            <p class="booking-hero__subtitle">Pick a date, grab your lanes, and we'll have the ball return warmed up before you arrive.</p>
+        </section>
 
-<script>
-  const nav = document.querySelector('.nav');
-  let lastScrollY = window.scrollY;
+        <section class="pricing" aria-label="Pricing">
+            <h2 class="booking-section-title">Pricing</h2>
+            <p class="section-subtitle">Simple rates, no hidden pins.</p>
+            <div class="pricing-table-wrap">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Service</th>
+                            <th scope="col">Weekday</th>
+                            <th scope="col">Weekend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Bowling (per hour)</th><td>$25</td><td>$35</td></tr>
+                        <tr><th scope="row">Shoe rental</th><td>$4</td><td>$4</td></tr>
+                        <tr><th scope="row">Student package</th><td>$18</td><td>$22</td></tr>
+                        <tr><th scope="row">Family package</th><td>$75</td><td>$90</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+        <section class="promotions" aria-label="Promotions">
+            <h2 class="booking-section-title">Promotions</h2>
+            <p class="section-subtitle">Ways to save a frame or two.</p>
+            <div class="promo-grid">
+                <article class="promo-card">
+                    <p class="promo-card__mark">%</p>
+                    <h3>Student discounts</h3>
+                    <p>Flash a valid student ID for discounted games, every day of the week.</p>
+                </article>
+                <article class="promo-card">
+                    <p class="promo-card__mark">HH</p>
+                    <h3>Happy hour</h3>
+                    <p>Half-price lanes, weekdays 3–6pm. Walk-ins welcome while lanes last.</p>
+                </article>
+                <article class="promo-card">
+                    <p class="promo-card__mark">🎂</p>
+                    <h3>Birthday packages</h3>
+                    <p>Lanes, shoes and cake, bundled together. We'll handle the party.</p>
+                </article>
+                <article class="promo-card">
+                    <p class="promo-card__mark">FAM</p>
+                    <h3>Family deals</h3>
+                    <p>Bundle games and shoe rentals for the whole crew at a flat rate.</p>
+                </article>
+                <article class="promo-card">
+                    <p class="promo-card__mark">CO</p>
+                    <h3>Corporate packages</h3>
+                    <p>Team outings with reserved lanes, scoring by group, and catering add-ons.</p>
+                </article>
+                <article class="promo-card">
+                    <p class="promo-card__mark">★</p>
+                    <h3>Holiday specials</h3>
+                    <p>Seasonal rates during school breaks and long weekends.</p>
+                </article>
+            </div>
+        </section>
 
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      nav.classList.add('nav--hidden');
-    } else {
-      nav.classList.remove('nav--hidden');
-    }
+        <section class="booking-layout" aria-label="Book a lane">
+            <form class="booking-form" id="bookingForm" novalidate>
+                <h2 class="booking-form__title">Booking details</h2>
 
-    lastScrollY = currentScrollY;
-  });
-</script>
-</body>
+                <div class="form-row">
+                    <div class="field">
+                        <label for="bookingDate">Date</label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+                    <div class="field">
+                        <label for="bookingTime">Time</label>
+                        <input type="time" id="bookingTime" value="18:00" required>
+                    </div>
+                </div>
+
+                <div class="form-row form-row--three">
+                    <div class="field">
+                        <label for="players">Players</label>
+                        <input type="number" id="players" min="1" max="8" value="2">
+                    </div>
+                    <div class="field">
+                        <label for="lanes">Lanes</label>
+                        <input type="number" id="lanes" min="1" max="4" value="1">
+                    </div>
+                    <div class="field">
+                        <label for="duration">Duration</label>
+                        <select id="duration">
+                            <option value="1">1 hour</option>
+                            <option value="2" selected>2 hours</option>
+                            <option value="3">3 hours</option>
+                            <option value="4">4 hours</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <span class="field__label">Booking type</span>
+                    <div class="booking-type" role="radiogroup" aria-label="Booking type">
+                        <label class="booking-type__option">
+                            <input type="radio" name="bookingType" value="standard" checked>
+                            <span>Standard hourly</span>
+                        </label>
+                        <label class="booking-type__option">
+                            <input type="radio" name="bookingType" value="student">
+                            <span>Student package</span>
+                        </label>
+                        <label class="booking-type__option">
+                            <input type="radio" name="bookingType" value="family">
+                            <span>Family package</span>
+                        </label>
+                    </div>
+                    <p class="field__hint" id="packageHint">Lanes, duration and players set your rate.</p>
+                </div>
+
+                <button type="submit" class="booking-form__submit" id="payButton">
+                    <span>Add to cart</span>
+                    <span id="submitPrice">$0.00</span>
+                </button>
+            </form>
+
+            <aside class="booking-summary" id="bookingSummary" aria-label="Price summary">
+                <h2 class="booking-summary__title">Scoreboard</h2>
+                <dl class="booking-summary__rows" id="summaryRows"></dl>
+                <div class="booking-summary__total">
+                    <span>Total</span>
+                    <span class="booking-summary__digits" id="totalPrice">$0.00</span>
+                </div>
+                <p class="booking-summary__rate-tag" id="rateTag">Select a date</p>
+            </aside>
+        </section>
+
+        <section class="confirmation" id="confirmation" hidden>
+            <div class="confirmation__card">
+                <p class="confirmation__eyebrow">Added to cart</p>
+                <h2 class="confirmation__title">Your lanes are waiting in the cart.</h2>
+                <dl class="confirmation__details" id="confirmationDetails"></dl>
+                <p class="confirmation__id">Booking ID <span id="bookingId"></span></p>
+                <div class="confirmation__actions">
+                    <a href="Cart.html" class="confirmation__cart-link">View cart</a>
+                    <button type="button" class="confirmation__reset" id="resetBooking">Book another lane</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <a href="#" class="nav__brand nav__brand--footer">
+                <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" fill="#12213A"/>
+                    <circle cx="22" cy="20" r="2.6" fill="#0A1526"/>
+                    <circle cx="32" cy="16" r="2.6" fill="#0A1526"/>
+                    <circle cx="22" cy="30" r="2.6" fill="#0A1526"/>
+                    <rect x="23" y="30" width="18" height="15" rx="3" fill="#4FB6F0"/>
+                    <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#4FB6F0" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+                    <circle cx="32" cy="36" r="2.6" fill="#0A1526"/>
+                    <rect x="30.6" y="36" width="2.8" height="5.5" rx="1.2" fill="#0A1526"/>
+                </svg>
+                <span class="nav__brand-text">Only<em>Strikes</em></span>
+            </a>
+            <p class="footer__copy">&copy; 2026 OnlyStrikes. All pins reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            nav.classList.add('nav--hidden');
+            } else {
+            nav.classList.remove('nav--hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+
+    <script>
+        // --- Shared cart helpers (same storage key / shape used by Cart.html) ---
+        const CART_KEY = 'onlystrikes_cart';
+
+        function getCart() {
+            try {
+                return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        }
+
+        function updateCartBadge() {
+            const cart = getCart();
+            const badge = document.querySelector('[data-cart-count]');
+            if (badge) {
+                const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+                badge.textContent = count;
+                badge.setAttribute('data-cart-count', count);
+            }
+        }
+
+        updateCartBadge();
+    </script>
+
+    <script>
+        (function () {
+            const RATES = {
+                standardWeekday: 25,
+                standardWeekend: 35,
+                shoe: 4,
+                studentWeekday: 18,
+                studentWeekend: 22,
+                familyWeekday: 75,
+                familyWeekend: 90
+            };
+
+            const form = document.getElementById('bookingForm');
+            const dateInput = document.getElementById('bookingDate');
+            const timeInput = document.getElementById('bookingTime');
+            const playersInput = document.getElementById('players');
+            const lanesInput = document.getElementById('lanes');
+            const durationSelect = document.getElementById('duration');
+            const summaryRows = document.getElementById('summaryRows');
+            const totalPriceEl = document.getElementById('totalPrice');
+            const submitPriceEl = document.getElementById('submitPrice');
+            const rateTagEl = document.getElementById('rateTag');
+            const packageHint = document.getElementById('packageHint');
+            const payButton = document.getElementById('payButton');
+            const confirmation = document.getElementById('confirmation');
+            const bookingLayout = document.querySelector('.booking-layout');
+            const confirmationDetails = document.getElementById('confirmationDetails');
+            const bookingIdEl = document.getElementById('bookingId');
+            const resetBooking = document.getElementById('resetBooking');
+
+            // Default the date input to today so the weekday/weekend rate resolves immediately.
+            const todayISO = new Date().toISOString().slice(0, 10);
+            dateInput.value = todayISO;
+
+            function clamp(value, min, max) {
+                return Math.min(max, Math.max(min, value));
+            }
+
+            function isWeekend(dateStr) {
+                if (!dateStr) return false;
+                const day = new Date(dateStr + 'T00:00:00').getDay();
+                return day === 0 || day === 6;
+            }
+
+            function money(n) {
+                return '$' + n.toFixed(2);
+            }
+
+            function bookingType() {
+                const checked = form.querySelector('input[name="bookingType"]:checked');
+                return checked ? checked.value : 'standard';
+            }
+
+            function renderRows(rows) {
+                summaryRows.innerHTML = '';
+                rows.forEach(([label, detail, amount]) => {
+                    const dt = document.createElement('dt');
+                    dt.innerHTML = label + '<span>' + detail + '</span>';
+                    const dd = document.createElement('dd');
+                    dd.textContent = amount;
+                    summaryRows.appendChild(dt);
+                    summaryRows.appendChild(dd);
+                });
+            }
+
+            function calculate() {
+                const weekend = isWeekend(dateInput.value);
+                const players = clamp(parseInt(playersInput.value, 10) || 1, 1, 8);
+                const lanes = clamp(parseInt(lanesInput.value, 10) || 1, 1, 4);
+                const duration = parseInt(durationSelect.value, 10);
+                const type = bookingType();
+
+                rateTagEl.textContent = dateInput.value
+                    ? (weekend ? 'Weekend rate' : 'Weekday rate')
+                    : 'Select a date';
+
+                const lanesDisabled = type !== 'standard';
+                lanesInput.disabled = lanesDisabled;
+                durationSelect.disabled = lanesDisabled && type === 'family';
+
+                let total = 0;
+                let rows = [];
+                let laneCost = 0;
+                let shoeCost = 0;
+
+                if (type === 'standard') {
+                    packageHint.textContent = 'Lanes, duration and players set your rate.';
+                    const rate = weekend ? RATES.standardWeekend : RATES.standardWeekday;
+                    laneCost = rate * duration * lanes;
+                    shoeCost = RATES.shoe * players;
+                    total = laneCost + shoeCost;
+                    rows.push(['Lane time', lanes + ' lane × ' + duration + 'h × ' + money(rate), money(laneCost)]);
+                    rows.push(['Shoe rental', players + ' players × ' + money(RATES.shoe), money(shoeCost)]);
+                } else if (type === 'student') {
+                    packageHint.textContent = 'Flat per-player rate, includes shoes and one game.';
+                    const rate = weekend ? RATES.studentWeekend : RATES.studentWeekday;
+                    total = rate * players;
+                    rows.push(['Student package', players + ' players × ' + money(rate), money(total)]);
+                } else if (type === 'family') {
+                    packageHint.textContent = 'Flat rate for up to 5 players, two hours of play.';
+                    const rate = weekend ? RATES.familyWeekend : RATES.familyWeekday;
+                    total = rate;
+                    rows.push(['Family package', 'Flat rate, up to 5 players', money(total)]);
+                }
+
+                renderRows(rows);
+                totalPriceEl.textContent = money(total);
+                submitPriceEl.textContent = money(total);
+
+                return { total, weekend, players, lanes, duration, type, laneCost, shoeCost };
+            }
+
+            function packageLabel(type) {
+                if (type === 'student') return 'Student Package';
+                if (type === 'family') return 'Family Package';
+                return 'Standard Lane Booking';
+            }
+
+            function buildCartItemName(state) {
+                const label = packageLabel(state.type);
+                if (state.type === 'standard') {
+                    return label + ' — ' + state.lanes + ' lane(s) × ' + state.duration + 'h + shoes';
+                }
+                return label + ' — ' + state.players + ' player(s)';
+            }
+
+            function addBookingToCart(state, id) {
+                const cart = getCart();
+
+                const item = {
+                    id: id,
+                    type: 'booking',
+                    name: buildCartItemName(state),
+                    price: state.total,
+                    qty: 1,
+                    image: 'BrandLogo.png',
+                    details: {
+                        bookingType: packageLabel(state.type),
+                        date: dateInput.value,
+                        time: timeInput.value,
+                        players: state.players,
+                        lanes: state.type === 'standard' ? state.lanes : null,
+                        duration: state.duration,
+                        rateTag: state.weekend ? 'Weekend rate' : 'Weekday rate',
+                        laneCost: state.type === 'standard' ? state.laneCost : null,
+                        shoeCost: state.type === 'standard' ? state.shoeCost : null
+                    }
+                };
+
+                cart.push(item);
+                saveCart(cart);
+                updateCartBadge();
+            }
+
+            [dateInput, timeInput, playersInput, lanesInput, durationSelect].forEach((el) => {
+                el.addEventListener('input', calculate);
+                el.addEventListener('change', calculate);
+            });
+            form.querySelectorAll('input[name="bookingType"]').forEach((el) => {
+                el.addEventListener('change', calculate);
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!dateInput.value || !timeInput.value) {
+                    dateInput.reportValidity();
+                    return;
+                }
+
+                const state = calculate();
+                const id = 'OS-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+
+                addBookingToCart(state, id);
+
+                confirmationDetails.innerHTML = '';
+                const details = [
+                    ['Package', packageLabel(state.type)],
+                    ['Date', new Date(dateInput.value + 'T00:00:00').toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' })],
+                    ['Time', timeInput.value],
+                    ['Lanes', state.type === 'standard' ? String(state.lanes) : '1 (package)'],
+                    ['Players', String(state.players)],
+                    ['Duration', state.duration + ' hour(s)'],
+                    ['Rate', state.weekend ? 'Weekend rate' : 'Weekday rate'],
+                    ['Total', money(state.total)]
+                ];
+                details.forEach(([label, value]) => {
+                    const dt = document.createElement('dt');
+                    dt.textContent = label;
+                    const dd = document.createElement('dd');
+                    dd.textContent = value;
+                    confirmationDetails.appendChild(dt);
+                    confirmationDetails.appendChild(dd);
+                });
+                bookingIdEl.textContent = id;
+
+                bookingLayout.hidden = true;
+                confirmation.hidden = false;
+                confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            resetBooking.addEventListener('click', function () {
+                confirmation.hidden = true;
+                bookingLayout.hidden = false;
+                form.reset();
+                dateInput.value = todayISO;
+                timeInput.value = '18:00';
+                calculate();
+                bookingLayout.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            calculate();
+        })();
+    </script>
+    </body>
 </html>
