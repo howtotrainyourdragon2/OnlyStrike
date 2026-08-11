@@ -23,14 +23,14 @@
                 <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Membership">Membership</a>
             </nav>
             <div class="nav__actions">
-                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" aria-label="Log in or sign up">
+                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/UserLogin" class="nav__profile" id="navProfile" aria-label="Log in or sign up">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/>
                         <path d="M4.5 19.5c1.6-3.6 4.6-5.4 7.5-5.4s5.9 1.8 7.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                     </svg>
-                    <span>Log in / Sign up</span>
+                    <span id="navProfileLabel">Log in / Sign up</span>
                 </a>
-                <a href="https://howtotrainyourdragon2.github.io/OnlyStrike/Cart" class="nav__cart nav__cart--active" aria-label="View cart">
+                <a href="Cart.html" class="nav__cart nav__cart--active" aria-label="View cart">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="9" cy="20" r="1.6" fill="currentColor"/>
                         <circle cx="18" cy="20" r="1.6" fill="currentColor"/>
@@ -71,16 +71,24 @@
 
                 <div class="strike-meter">
                     <div class="strike-meter__pins" id="strikePins">
-                        <span class="mini-pin" data-row="4"></span>
-                        <span class="mini-pin" data-row="3"></span>
-                        <span class="mini-pin" data-row="3"></span>
-                        <span class="mini-pin" data-row="2"></span>
-                        <span class="mini-pin" data-row="2"></span>
-                        <span class="mini-pin" data-row="2"></span>
-                        <span class="mini-pin" data-row="1"></span>
-                        <span class="mini-pin" data-row="1"></span>
-                        <span class="mini-pin" data-row="1"></span>
-                        <span class="mini-pin" data-row="1"></span>
+                        <div class="pin-row">
+                            <span class="mini-pin"></span>
+                            <span class="mini-pin"></span>
+                            <span class="mini-pin"></span>
+                            <span class="mini-pin"></span>
+                        </div>
+                        <div class="pin-row">
+                            <span class="mini-pin"></span>
+                            <span class="mini-pin"></span>
+                            <span class="mini-pin"></span>
+                        </div>
+                        <div class="pin-row">
+                            <span class="mini-pin"></span>
+                            <span class="mini-pin"></span>
+                        </div>
+                        <div class="pin-row">
+                            <span class="mini-pin"></span>
+                        </div>
                     </div>
                     <p class="strike-meter__caption" id="strikeCaption">Your next visit could be a strike.</p>
                 </div>
@@ -113,6 +121,8 @@
                             <svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
                         </button>
                     </div>
+
+                    <p class="auth-form__error" id="loginError" hidden>Enter both your email and password to continue.</p>
 
                     <div class="auth-form__row">
                         <label class="checkbox">
@@ -236,6 +246,49 @@
                 badge.textContent = count;
                 badge.setAttribute('data-cart-count', count);
             }
+        })();
+    </script>
+
+    <script>
+        // --- Shared auth state ---
+        // Copy this block (and the id="navProfile" / id="navProfileLabel" markup above)
+        // onto every page so the signed-in state stays consistent site-wide.
+        (function () {
+            const AUTH_KEY = 'onlystrikes_signed_in';
+            const profileLink = document.getElementById('navProfile');
+            const profileLabel = document.getElementById('navProfileLabel');
+
+            function isSignedIn() {
+                try { return localStorage.getItem(AUTH_KEY) === 'true'; } catch (err) { return false; }
+            }
+
+            function setSignedIn(value) {
+                try { localStorage.setItem(AUTH_KEY, value ? 'true' : 'false'); } catch (err) { /* ignore */ }
+            }
+
+            function applyAuthState() {
+                if (!profileLink) return;
+                const signedIn = isSignedIn();
+                if (profileLabel) profileLabel.hidden = signedIn;
+                profileLink.classList.toggle('nav__profile--signed-in', signedIn);
+                profileLink.setAttribute('aria-label', signedIn ? 'Log out' : 'Log in or sign up');
+            }
+
+            if (profileLink) {
+                profileLink.addEventListener('click', function (e) {
+                    if (isSignedIn()) {
+                        e.preventDefault();
+                        setSignedIn(false);
+                        applyAuthState();
+                        window.location.href = 'https://howtotrainyourdragon2.github.io/OnlyStrike/';
+                    }
+                    // not signed in: let the link fall through to the login page as normal
+                });
+            }
+
+            applyAuthState();
+
+            window.OnlyStrikesAuth = { isSignedIn, setSignedIn, applyAuthState };
         })();
     </script>
 
@@ -375,9 +428,29 @@
                 }, 2200);
             }
 
+            /* ---------------------------------------------------------------- */
+            /* Login: require email + password, then sign in and go home        */
+            /* ---------------------------------------------------------------- */
+            const loginError = document.getElementById('loginError');
+
             loginForm.addEventListener('submit', (e) => {
                 e.preventDefault();
+                const email = document.getElementById('loginEmail').value.trim();
+                const password = document.getElementById('loginPassword').value;
+
+                if (!email || !password) {
+                    loginError.hidden = false;
+                    loginForm.reportValidity();
+                    return;
+                }
+                loginError.hidden = true;
+
+                if (window.OnlyStrikesAuth) window.OnlyStrikesAuth.setSignedIn(true);
+
                 celebrate('Welcome back — lane\'s warming up.');
+                setTimeout(() => {
+                    window.location.href = 'https://howtotrainyourdragon2.github.io/OnlyStrike/';
+                }, 1800);
             });
 
             signupForm.addEventListener('submit', (e) => {
